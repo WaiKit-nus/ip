@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Parser {
     /**
      * Takes the user input and identify the index which,
@@ -22,5 +24,13 @@ public class Parser {
     public String[] identifyDeadlineCommand(String userInput){
         String[] parts = userInput.split("/");
         return parts;
+    }
+
+    public String parseDate(String userInput){
+        String date = identifyDeadlineCommand(userInput)[1];
+        LocalDate parsedDate = LocalDate.parse(date);
+
+        String newDateFormat = parsedDate.getDayOfWeek().toString() + parsedDate.getMonth().toString() + parsedDate.getYear();
+        return newDateFormat;
     }
 }

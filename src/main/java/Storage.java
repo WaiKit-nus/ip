@@ -100,10 +100,8 @@ public class Storage{
         String taskDescriptionOnly = "";
         if(userInput.contains("[X]")){
             completed = true;
-            //taskDescriptionOnly = userInput.substring(userInput.indexOf(" ", 6), userInput.indexOf("/"));
         } else{
             completed = false;
-            //taskDescriptionOnly = userInput.split(" ", 4)[3];
         }
         taskDescriptionOnly = userInput.substring(userInput.indexOf(" ", 7), userInput.indexOf("/"));
         Deadline deadLineTask = new Deadline(taskDescriptionOnly,
