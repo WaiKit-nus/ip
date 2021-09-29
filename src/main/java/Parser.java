@@ -29,8 +29,11 @@ public class Parser {
     public String parseDate(String userInput){
         String date = identifyDeadlineCommand(userInput)[1];
         LocalDate parsedDate = LocalDate.parse(date);
+        String month = parsedDate.getMonth().toString().toLowerCase();
+        String day = parsedDate.getDayOfWeek().toString().toLowerCase();
+        String year = String.valueOf(parsedDate.getYear());
 
-        String newDateFormat = parsedDate.getDayOfWeek().toString() + parsedDate.getMonth().toString() + parsedDate.getYear();
+        String newDateFormat = day + " " + month + " " + year;
         return newDateFormat;
     }
 }

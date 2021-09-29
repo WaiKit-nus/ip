@@ -133,7 +133,7 @@ public class Duke {
         }
         Events eventTask = new Events(
                 userInput.substring(userInput.indexOf(' ',0), userInput.indexOf('/')),
-        completed,"/" + parser.identifyDeadlineCommand(userInput)[1]);
+        completed,"/" + parser.parseDate(userInput));
         taskList.addTasks(eventTask);
         eventTask.initialiseEvent();
     }
@@ -153,7 +153,7 @@ public class Duke {
         }
         Deadline deadLineTask = new Deadline(
                 userInput.substring(userInput.indexOf(' ',0), userInput.indexOf('/'))
-                ,completed,"/" + parser.identifyDeadlineCommand(userInput)[1]);
+                ,completed,"/" + parser.parseDate(userInput));
         taskList.addTasks(deadLineTask);
         deadLineTask.initialiseDeadline();
     }
